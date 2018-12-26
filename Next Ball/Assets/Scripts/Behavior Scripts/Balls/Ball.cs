@@ -25,7 +25,7 @@ public class Ball : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D col){
 		if (!GameObject.Find ("ReferencePoint").GetComponent<BallThrower> ().instanciou) { // resolvendo bug 1
-			if (col.tag == "EnemyBall" || col.tag == "Ball") { // se colidir com um inimigo
+			if (col.tag == "EnemyBall" || col.tag == "Ball" || col.tag == "Chess New Ball") { // se colidir com um inimigo
 				if(col.tag == "EnemyBall"){
 					col.GetComponent<EnemyBall> ().reduceHeath (this.damage);
 				}

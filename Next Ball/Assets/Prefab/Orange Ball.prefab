@@ -53,6 +53,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 7ad10f09b2bed40409bbbd3afdf18b9f, type: 3}
+  damage: 1
 --- !u!212 &212628549908691370
 SpriteRenderer:
   m_ObjectHideFlags: 1

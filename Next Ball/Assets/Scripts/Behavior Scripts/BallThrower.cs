@@ -11,8 +11,42 @@ public class BallThrower : MonoBehaviour {
 	GameObject instanceTemp;
 	public bool instanciou = false; 
 
+	//RESOLVENDO BUG 2 VARIAVEIS
+	public bool button1;
+	public bool button2;
+
+	void Start(){
+
+	}
 
 	void Update () {
+		
+			button1 = GameObject.Find ("Ball Select").GetComponent<BallSelect> ().isOn;
+			button2 = GameObject.Find ("Ball Select 2").GetComponent<BallSelect> ().isOn;
+			if (!button1 && !button2) {
+				thrower ();
+			}
+
+		
+
+			
+
+			
+
+
+	}
+
+	void newAmountBalls(){
+		int p = GameObject.Find ("Game Model").GetComponent<Game_Model> ().amountBalls; // capturando os pontos atuais
+		if(p == 0){
+			SceneManager.LoadScene ("TryAgain");
+		}
+		GameObject.Find ("Game Model").GetComponent<Game_Model> ().attAmountBalls(p-1); // adicionando mais um ponto
+
+
+	}
+
+	void thrower(){
 		if (Input.GetMouseButton (0)) { 
 			mousePosition = Camera.main.ScreenPointToRay (Input.mousePosition).GetPoint (0);
 			mousePosition.z = transform.position.z;
@@ -38,14 +72,5 @@ public class BallThrower : MonoBehaviour {
 			instanceTemp = null;
 		}
 	}
-
-	void newAmountBalls(){
-		int p = GameObject.Find ("Game Model").GetComponent<Game_Model> ().amountBalls; // capturando os pontos atuais
-		if(p == 0){
-			SceneManager.LoadScene ("TryAgain");
-		}
-		GameObject.Find ("Game Model").GetComponent<Game_Model> ().attAmountBalls(p-1); // adicionando mais um ponto
-
-
-	}
 }
+

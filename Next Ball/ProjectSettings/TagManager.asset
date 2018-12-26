@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - EnemyBall
+  - Chess New Ball
   layers:
   - Default
   - TransparentFX
