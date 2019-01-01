@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4169e6c87c959488aecc30de19f1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 1745588348204444, guid: fc3f7cade48e0ae47919662678e36007, type: 2}
+  ball: {fileID: 1049511406285132, guid: 6805c3b9a342ff44b93dedc891de1b40, type: 2}
   force: 10
   maxDistance: 1.5
   instanciou: 0

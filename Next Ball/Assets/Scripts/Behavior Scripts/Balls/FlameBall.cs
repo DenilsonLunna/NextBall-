@@ -24,9 +24,6 @@ public class FlameBall : MonoBehaviour{
 	}
 	void OnTriggerEnter2D(Collider2D col){
 			if (col.tag == "EnemyBall" || col.tag == "Ball") { // se colidir com um inimigo
-				if(col.tag == "EnemyBall" ){
-					col.GetComponent<EnemyBall> ().reduceHeath (this.damage);
-				}
 					fb.SpecialPower(col);
 					Destroy (this.gameObject);
 			}
