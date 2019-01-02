@@ -13,7 +13,6 @@ public class ShockBall : MonoBehaviour{
 			GameObject[] enemys = GameObject.FindGameObjectsWithTag ("EnemyBall");
 			int interation = enemys.Length-1;
 			while (interation >= 0) {
-				Debug.Log (interation);
 				Destroy (enemys[interation]);
 				interation--;
 			}

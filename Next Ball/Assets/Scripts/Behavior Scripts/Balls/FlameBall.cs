@@ -23,7 +23,7 @@ public class FlameBall : MonoBehaviour{
 		fb.setDamage (damage);
 	}
 	void OnTriggerEnter2D(Collider2D col){
-			if (col.tag == "EnemyBall" || col.tag == "Ball") { // se colidir com um inimigo
+		if (col.tag == "EnemyBall" || col.tag == "Ball") { // se colidir com um inimigo
 					fb.SpecialPower(col);
 					Destroy (this.gameObject);
 			}
