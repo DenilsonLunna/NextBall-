@@ -11,11 +11,15 @@ public class ShockBall : MonoBehaviour{
 		public override void SpecialPower (Collider2D col)
 		{
 			GameObject[] enemys = GameObject.FindGameObjectsWithTag ("EnemyBall");
-			int interation = enemys.Length-1;
+			Game_Model gm = GameObject.Find ("Game Model").GetComponent<Game_Model> ();
+
+			int interation = enemys.Length-1,p = 0;
 			while (interation >= 0) {
+				p += enemys[interation].GetComponent<EnemyBall>().getDamage();
 				Destroy (enemys[interation]);
 				interation--;
 			}
+			gm.attAmountBalls (gm.amountBalls + p);
 
 
 		}
@@ -31,6 +35,7 @@ public class ShockBall : MonoBehaviour{
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.tag == "EnemyBall" || col.tag == "Ball") { // se colidir com um inimigo
 			Destroy (this.gameObject);
+
 			fb.SpecialPower(col);
 
 		}

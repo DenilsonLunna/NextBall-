@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestPoint: 0
-  lifeGame: 5
+  lifeGame: 10
   amountBalls: 30
   bestPointTxt: {fileID: 1853472468}
   lifeGameTxt: {fileID: 1017299130}

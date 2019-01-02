@@ -10,8 +10,11 @@ public class FlameBall : MonoBehaviour{
 
 		public override void SpecialPower (Collider2D col)
 		{
-			col.GetComponent<EnemyBall> ().setDamage (0); // destroi instantaneamente
-	
+			EnemyBall eb = col.GetComponent<EnemyBall> ();
+			eb.setDamage (0); // destroi instantaneamente
+			Game_Model gm = GameObject.Find ("Game Model").GetComponent<Game_Model> ();
+			int p = gm.amountBalls + eb.getDamage();
+			gm.attAmountBalls(p); // adicionando mais bolas para o jogador
 		}
 
 	}
@@ -25,6 +28,7 @@ public class FlameBall : MonoBehaviour{
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.tag == "EnemyBall" || col.tag == "Ball") { // se colidir com um inimigo
 					fb.SpecialPower(col);
+					
 					Destroy (this.gameObject);
 			}
 	}
