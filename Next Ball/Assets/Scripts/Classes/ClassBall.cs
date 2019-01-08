@@ -44,7 +44,7 @@ public class ClassBall{
 
 	}
 	public void setDamage(int dam){
-		if (dam > 0) {
+		if (dam >= 0) {
 			this.damage = dam;
 		}
 	}

@@ -627,8 +627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bestPoint: 0
-  lifeGame: 10
-  amountBalls: 30
+  lifeGame: 100
+  amountBalls: 100
   bestPointTxt: {fileID: 1853472468}
   lifeGameTxt: {fileID: 1017299130}
   amountBallsTxt: {fileID: 656940308}
@@ -824,7 +824,7 @@ RectTransform:
   m_GameObject: {fileID: 1447310095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.9788, y: 4.9788, z: 4.9788}
+  m_LocalScale: {x: 9.144924, y: 9.144924, z: 9.144924}
   m_Children: []
   m_Father: {fileID: 1500878850}
   m_RootOrder: 1
@@ -892,6 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 1745588348204444, guid: fc3f7cade48e0ae47919662678e36007, type: 2}
+  spriteBallCurrent: {fileID: 0}
   force: 10
   maxDistance: 1.5
   instanciou: 0

@@ -16,7 +16,16 @@ public class ShockBall : MonoBehaviour{
 			int interation = enemys.Length-1,p = 0;
 			while (interation >= 0) {
 				p += enemys[interation].GetComponent<EnemyBall>().getDamage();
-				Destroy (enemys[interation]);
+				EnemyBall eb = enemys [interation].GetComponent<EnemyBall> ();
+
+				eb.setDamage (eb.getDamage() - 1); // tira 1 de hp de cada bola em campo
+
+				if(eb.getDamage() <= 0){
+					Destroy (col.gameObject);
+				}
+				eb.damageTxt.text = eb.getDamage().ToString();
+
+
 				interation--;
 			}
 			gm.attAmountBalls (gm.amountBalls + p);

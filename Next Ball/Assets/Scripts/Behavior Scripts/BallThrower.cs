@@ -6,6 +6,7 @@ using System.Collections;
 public class BallThrower : MonoBehaviour {
 
 	public GameObject ball;
+	public Sprite spriteBallCurrent;
 	public float force, maxDistance = 3;
 	Vector3 mousePosition;
 	GameObject instanceTemp;
@@ -13,6 +14,8 @@ public class BallThrower : MonoBehaviour {
 	private GameObject simpleBall;
 	void Start(){
 		simpleBall = ball;
+		spriteBallCurrent = ball.GetComponent<SpriteRenderer> ().sprite;
+		this.GetComponent<SpriteRenderer> ().sprite = spriteBallCurrent;
 
 	}
 
@@ -47,6 +50,7 @@ public class BallThrower : MonoBehaviour {
 			//isso esta fazendo com que quando eu troque por uma bola com efeito especial, depois de utiliza ela eu volte para a bola normal, no caso a Simple ball
 			if (instanceTemp.name != "Ball") {
 				ball = simpleBall;
+				this.GetComponent<SpriteRenderer> ().sprite = simpleBall.GetComponent<SpriteRenderer> ().sprite;
 			}
 
 			instanceTemp = null;

@@ -19,7 +19,9 @@ public class Box : MonoBehaviour {
 		public override void Effect (GameObject[] balls)
 		{
 			BallThrower bt = GameObject.Find ("ReferencePoint").GetComponent<BallThrower> ();
-			bt.ball = balls[Random.Range(0, balls.Length)];
+			GameObject newBall = balls [Random.Range (0, balls.Length)];
+			bt.ball = newBall;
+			GameObject.Find ("ReferencePoint").GetComponent<SpriteRenderer> ().sprite = newBall.GetComponent<SpriteRenderer> ().sprite; 
 		}
 
 	}
