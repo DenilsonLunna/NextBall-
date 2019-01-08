@@ -6,10 +6,12 @@ public class EnemyBallThrower : MonoBehaviour {
 	private float time;
 	public float timeForChangePositionAndThrow;
 	public List<GameObject> obstaculos;
+	private int tamList;
 
 	// Use this for initialization
 	void Start () {
 		time = 0;
+		tamList = obstaculos.Count;
 	}
 
 	// Update is called once per frame
@@ -27,7 +29,7 @@ public class EnemyBallThrower : MonoBehaviour {
 
 	void Throw(){
 		//============ Instanciando Obstaculos
-		GameObject obs =  Instantiate (obstaculos [0], this.transform.position, Quaternion.identity);
+		GameObject obs =  Instantiate (obstaculos [Random.Range(0,tamList)], this.transform.position, Quaternion.identity);
 
 		//=========== Preciso fazer isso para que o texto da vida da bola apareça na canvas
 		obs.transform.SetParent (GameObject.Find ("Canvas").transform);

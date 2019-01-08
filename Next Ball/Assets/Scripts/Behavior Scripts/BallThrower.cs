@@ -6,37 +6,57 @@ using System.Collections;
 public class BallThrower : MonoBehaviour {
 
 	public GameObject ball;
+	public Sprite spriteBallCurrent;
 	public float force, maxDistance = 3;
 	Vector3 mousePosition;
 	GameObject instanceTemp;
 	public bool instanciou = false; 
+	private GameObject simpleBall;
+	void Start(){
+		simpleBall = ball;
+		spriteBallCurrent = ball.GetComponent<SpriteRenderer> ().sprite;
+		this.GetComponent<SpriteRenderer> ().sprite = spriteBallCurrent;
 
+	}
 
 	void Update () {
 		if (Input.GetMouseButton (0)) { 
+			//pegando e ajustando posicao do mouse
 			mousePosition = Camera.main.ScreenPointToRay (Input.mousePosition).GetPoint (0);
 			mousePosition.z = transform.position.z;
+
+
 			if (instanciou == false) {
 				instanciou = true;
-				instanceTemp = Instantiate (ball, mousePosition, transform.rotation) as GameObject;
+				instanceTemp = Instantiate (ball, mousePosition, transform.rotation) as GameObject;// instanciando bola
 				instanceTemp.GetComponent<Rigidbody2D> ().isKinematic = true;
 			}
-			if (Vector3.Distance (transform.position, mousePosition) < maxDistance) { 
+			if (Vector3.Distance (transform.position, mousePosition) < maxDistance) { // limitação da posicao da bola
 				instanceTemp.transform.position = mousePosition;
 			} else {
-				Vector3 lugarCorreto = transform.position + (mousePosition - transform.position).normalized * maxDistance;
+				Vector3 lugarCorreto = transform.position + (mousePosition - transform.position).normalized * maxDistance; // colocando a bola na posicao correta
 				instanceTemp.transform.position = lugarCorreto;
 			}
 		}
 
-		if (Input.GetMouseButtonUp (0) && instanciou == true) {
+		if (Input.GetMouseButtonUp (0) && instanciou == true) { // lancar bola
 			instanciou = false;
 			newAmountBalls ();
 			Vector3 direcao = transform.position - instanceTemp.transform.position;
 			instanceTemp.GetComponent<Rigidbody2D> ().isKinematic = false;
 			instanceTemp.GetComponent<Rigidbody2D> ().AddForce (direcao * force, ForceMode2D.Impulse);
+
+
+			//isso esta fazendo com que quando eu troque por uma bola com efeito especial, depois de utiliza ela eu volte para a bola normal, no caso a Simple ball
+			if (instanceTemp.name != "Ball") {
+				ball = simpleBall;
+				this.GetComponent<SpriteRenderer> ().sprite = simpleBall.GetComponent<SpriteRenderer> ().sprite;
+			}
+
 			instanceTemp = null;
+
 		}
+
 	}
 
 	void newAmountBalls(){

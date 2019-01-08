@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - EnemyBall
+  - Box
   layers:
   - Default
   - TransparentFX

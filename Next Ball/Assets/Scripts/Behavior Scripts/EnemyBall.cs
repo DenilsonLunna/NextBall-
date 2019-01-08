@@ -32,12 +32,16 @@ public class EnemyBall : MonoBehaviour{
 
 	void newPoint(){
 		//ajustar isso
-		int p = GameObject.Find ("Game Model").GetComponent<Game_Model> ().bestPoint; // capturando os pontos atuais
+		Game_Model gm = GameObject.Find ("Game Model").GetComponent<Game_Model> ();
+		int p = gm.bestPoint; // capturando os pontos atuais
 		p += points;
 		PlayerPrefs.SetInt ("pointsInGame",p);
-		GameObject.Find ("Game Model").GetComponent<Game_Model> ().attBestPoint(p); // adicionando mais um ponto
+		gm.attBestPoint(p); // adicionando mais um ponto
+		p = gm.amountBalls + points;
+		gm.attAmountBalls(p); // adicionando mais bolas para o jogador
 
 	}
+
 
 	public void reduceHeath(int damage){
 		this.damage -= damage;
