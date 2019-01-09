@@ -28,6 +28,7 @@ public class Ball : MonoBehaviour {
 			if (col.tag == "EnemyBall" || col.tag == "Ball" || col.tag == "Box") { // se colidir com um inimigo
 				if(col.tag == "EnemyBall"){
 					col.GetComponent<EnemyBall> ().reduceHeath (this.damage);
+
 				}
 				nb.SpecialPower (col);
 				Destroy (this.gameObject);

@@ -23,10 +23,6 @@ public class EnemyBall : MonoBehaviour{
 	void OnTriggerEnter2D(Collider2D col){
 		if (!GameObject.Find ("ReferencePoint").GetComponent<BallThrower> ().instanciou) { // resolvendo bug 1
 			if (col.tag == "Ball") {// se colidir com outra bola aliada
-				if (damage == 0) {
-					newPoint ();
-					Destroy (this.gameObject);
-				}
 				damageTxt.text = damage.ToString ();
 			}
 		}
@@ -49,6 +45,10 @@ public class EnemyBall : MonoBehaviour{
 
 	public void reduceHeath(int damage){
 		this.damage -= damage;
+		if (this.damage == 0) {
+			newPoint ();
+			Destroy (this.gameObject);
+		}
 	}
 
 

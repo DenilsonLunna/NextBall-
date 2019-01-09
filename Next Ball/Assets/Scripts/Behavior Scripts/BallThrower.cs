@@ -13,6 +13,7 @@ public class BallThrower : MonoBehaviour {
 	private GameObject simpleBall;
 	void Start(){
 		simpleBall = ball;
+		this.GetComponent<SpriteRenderer> ().sprite = simpleBall.GetComponent<SpriteRenderer> ().sprite;
 
 	}
 
@@ -47,6 +48,8 @@ public class BallThrower : MonoBehaviour {
 			//isso esta fazendo com que quando eu troque por uma bola com efeito especial, depois de utiliza ela eu volte para a bola normal, no caso a Simple ball
 			if (instanceTemp.name != "Ball") {
 				ball = simpleBall;
+				this.GetComponent<SpriteRenderer> ().sprite = simpleBall.GetComponent<SpriteRenderer> ().sprite;
+				this.transform.localScale = new Vector2(5f,5f); // mudando tamanho, um bug de imagem pequena
 			}
 
 			instanceTemp = null;
