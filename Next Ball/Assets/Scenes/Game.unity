@@ -672,7 +672,7 @@ RectTransform:
   m_GameObject: {fileID: 1447310095}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.9788, y: 4.9788, z: 4.9788}
+  m_LocalScale: {x: 8.690716, y: 8.690716, z: 8.690716}
   m_Children: []
   m_Father: {fileID: 1500878850}
   m_RootOrder: 1
@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d4169e6c87c959488aecc30de19f1c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ball: {fileID: 1047418076176634, guid: e0a4971b168e64844b1719c1a6be3f9c, type: 2}
+  ball: {fileID: 1745588348204444, guid: fc3f7cade48e0ae47919662678e36007, type: 2}
   force: 10
   maxDistance: 1.5
   instanciou: 0

@@ -19,7 +19,10 @@ public class Box : MonoBehaviour {
 		public override void Effect (GameObject[] balls)
 		{
 			BallThrower bt = GameObject.Find ("ReferencePoint").GetComponent<BallThrower> ();
-			bt.ball = balls[Random.Range(0, balls.Length)];
+			GameObject newBall = balls [Random.Range (0, balls.Length)]; 
+			bt.ball = newBall;
+			bt.GetComponent<SpriteRenderer> ().sprite = newBall.GetComponent<SpriteRenderer> ().sprite; // trocando o sprite do referente ball, para o usuario saber qual a bola que ele vai lançar
+			bt.transform.localScale = new Vector2(30,30); // mudando tamanho, um bug de imagem pequena
 		}
 
 	}
