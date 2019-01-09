@@ -7,11 +7,15 @@ public class EnemyBall : MonoBehaviour{
 	private int damage;
 	public Text damageTxt;
 	public int points;
+	void Update(){
+		this.transform.Rotate (new Vector3 (0, 0, 2));// effect
+		damageTxt.transform.Rotate (new Vector3 (0, 0, -2));// effect
 
+	}
 	void Start(){
 		damage = Random.Range (1, 5); // adicionando vida da bola
 		points = damage; // os pontos que a bola vai dar, vai ser a quantidade do dano dela
-		this.transform.localScale = new Vector2((10 + damage),(10 + damage)); // definindo tamanho da bola com seu damage como base
+		//this.transform.localScale = new Vector2((40 + damage),(40 + damage)); // definindo tamanho da bola com seu damage como base
 		this.GetComponent<Rigidbody2D> ().drag = (damage * 0.1f)+(damage*0.05f); // definindo  velocidade que o obstaculo vai cair
 		damageTxt.text = damage.ToString();//colocando o dano da bola para aparecer no canvas
 	

@@ -20,7 +20,7 @@ public class EnemyBallThrower : MonoBehaviour {
 
 
 		if (time > timeForChangePositionAndThrow) {
-			this.transform.position = new Vector2 (Random.Range (-2f, 2f), this.transform.position.y);
+			this.transform.localPosition = new Vector3 (Random.Range (-2f, 2f), this.transform.position.y,88f);
 			this.Throw ();
 			time = 0;
 		}
