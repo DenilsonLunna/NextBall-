@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1047418076176634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.9326706, y: 0.06608984, z: 84.731064}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalPosition: {x: 1.1987466, y: 0.59202826, z: 84.731064}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -75,9 +75,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.013516843, y: 0}
   serializedVersion: 2
-  m_Radius: 3.37
+  m_Radius: 1.2478129
 --- !u!114 &114102945957073590
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f52efec44483a4ea132f5f5a8431a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 7ad10f09b2bed40409bbbd3afdf18b9f, type: 3}
+  sprite: {fileID: 21300000, guid: 0db1737031b25a14aa0ce790dc172500, type: 3}
   damage: 0
 --- !u!212 &212802287074479356
 SpriteRenderer:
@@ -126,7 +126,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ad10f09b2bed40409bbbd3afdf18b9f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0db1737031b25a14aa0ce790dc172500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
