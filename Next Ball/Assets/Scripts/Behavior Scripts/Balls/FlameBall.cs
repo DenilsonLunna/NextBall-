@@ -20,6 +20,10 @@ public class FlameBall : MonoBehaviour{
 	}
 
 	// Use this for initialization
+	void Update(){
+		this.transform.Rotate(new Vector3 (0, 0, 3)); // effect
+
+	}
 	void Start () {
 		fb.sprite = sprite;
 		this.GetComponent<SpriteRenderer> ().sprite = fb.sprite;
