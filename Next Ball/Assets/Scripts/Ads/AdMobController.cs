@@ -8,6 +8,16 @@ public class AdMobController : MonoBehaviour {
 
 	BannerView banner;
 	InterstitialAd fullAdMob;
+	public static AdMobController instancia;
+	// Use this for initialization
+	void Awake () {
+		if (instancia == null) {
+			instancia = this;
+		} else {
+			Destroy (instancia);
+		}
+		DontDestroyOnLoad(instancia);
+	}
 
 	public void Start(){
 		string appId = "ca-app-pub-1903277593620016/2470728823";
@@ -15,13 +25,23 @@ public class AdMobController : MonoBehaviour {
 		MobileAds.Initialize (appId);
 		this.RequestBanner ();
 		this.RequestFull ();
+		StartCoroutine ("rotina");
+	}
+
+
+	IEnumerator rotina()
+	{
+		yield return new WaitForSeconds(5);
+		this.ShowBanner ();
 	}
 	void RequestBanner(){
 		string bannerId = "ca-app-pub-1903277593620016/7124289700";
 		banner = new BannerView (bannerId, AdSize.SmartBanner, AdPosition.Bottom);
 		AdRequest adRequest = new AdRequest.Builder ().Build ();
 		banner.LoadAd (adRequest);
+		this.ShowBanner ();
 	}
+
 
 	public void ShowBanner(){
 		banner.Show ();
