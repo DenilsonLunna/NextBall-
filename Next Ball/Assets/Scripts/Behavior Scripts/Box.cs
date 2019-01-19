@@ -13,8 +13,8 @@ public class Box : MonoBehaviour {
 	void Start(){
 		box.setLife(Random.Range(3,7));
 		lifeTxt.text = box.getLife ().ToString ();
-
 	}
+
 	public class newBox : ClassBox{
 		public override void Effect (GameObject[] balls)
 		{

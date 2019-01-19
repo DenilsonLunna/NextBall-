@@ -7,9 +7,7 @@ public class Ball : MonoBehaviour {
 	public int damage;
 
 	public NormalBall nb = new NormalBall ();
-
 	public class NormalBall : ClassBall{
-
 		public override void SpecialPower (Collider2D col)
 		{
 			
@@ -23,6 +21,7 @@ public class Ball : MonoBehaviour {
 		this.GetComponent<SpriteRenderer> ().sprite = nb.sprite;
 		nb.setDamage (damage);
 	}
+
 	void OnTriggerEnter2D(Collider2D col){
 		if (!GameObject.Find ("ReferencePoint").GetComponent<BallThrower> ().instanciou) { // resolvendo bug 1
 			if (col.tag == "EnemyBall" || col.tag == "Ball" || col.tag == "Box") { // se colidir com um inimigo
